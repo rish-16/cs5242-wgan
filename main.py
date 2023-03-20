@@ -12,8 +12,8 @@ train_loader = get_emoji_dataset(PATH)
 batch = next(iter(train_loader))
 print (batch.shape)
 
-generator = Generator()
-discriminator = Discriminator()
+generator = Generator().cuda()
+discriminator = Discriminator().cuda()
 
 loss_fn = nn.BCELoss()
 
@@ -23,7 +23,7 @@ loss_fn = nn.BCELoss()
 
 g_opt = torch.optim.AdamW(generator.parameters(), lr=0.0002)
 d_opt = torch.optim.AdamW(discriminator.parameters(), lr=0.0002)
-Tensor = torch.FloatTensor
+Tensor = torch.cuda.FloatTensor
 
 epochs = 200
 for epoch in range(epochs):
