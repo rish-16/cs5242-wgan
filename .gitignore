@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 emojis_am/**
+*.zip
 # C extensions
 *.so
 

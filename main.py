@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from torch.autograd import Variable
+import torchvision.utils import save_image
 
 import numpy as np 
 from models import *
@@ -67,3 +68,4 @@ for epoch in range(epochs):
 
     if epoch % 20 == 0:
         print (f"epoch: {epoch} | d_loss: {epoch_loss_d:.5f} | g_loss: {epoch_loss_g:.5f}")
+        save_image(gen_imgs.data[:25], f"images/img_run2_b{epoch}.png", nrow=5, normalize=True)
